@@ -6,10 +6,11 @@
   <meta name="description" content="Catálogo de Gimar Pasteleria y Repostería artesanal">
   <title>Catálogo Gimar – Pastelería & Repostería</title>
   <link rel="icon" href="logo-gimar.webp" type="image/webp+xml">
-
+  <link rel="icon" href="logo-gimar-removebg-preview.ico" type="image/x-icon">
+<link rel="icon" href="logo-gimar-removebg-preview.png" type="image/png">
+<link rel="icon" href="logo-gimar-removebg-preview.webp" type="image/webp">
 
   <style>
-
    :root {
       --primary: #8b2c34;
       --secondary: #f8d7da;
@@ -68,46 +69,51 @@
     }
 
     /* Grid */
-   /* Sección tortas */
-.section .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  align-items: start;
-  padding: 20px;
-}
+    .section .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: start;
+      padding: 20px;
+    }
 
-.section .card {
-  text-align: center;
-  background: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
+    .section .card {
+      text-align: center;
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
-.section .card:hover {
-  transform: scale(1.05);
-}
+    .section .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
 
-.section .card img {
-  display: block;
-  width: 100%;
-  max-width: 220px;   /* ancho uniforme */
-  height: 180px;      /* alto fijo */
-  object-fit: cover;  /* recorta la imagen para que no se deforme */
-  border-radius: 8px;
-  margin: 0 auto 10px auto;
-}
+    .section .card img {
+      display: block;
+      width: 100%;
+      max-width: 220px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px; /* redondeado */
+      margin: 0 auto 10px auto;
+      transition: transform 0.3s ease;
+    }
 
-.section h3 {
-  font-size: 1rem;
-  margin: 0;
-  color: #333;
-}
+    .section .card:hover img {
+      transform: scale(1.08);
+    }
 
-    /* Slider */
+    .section h3 {
+      font-size: 1rem;
+      margin: 0;
+      color: #333;
+    }
+
+     /* Slider */
     .slider {
       position: relative;
       max-width: 100%;
@@ -116,23 +122,58 @@
       border-radius: 14px;
       box-shadow: 0 6px 14px rgba(0,0,0,.12);
     }
-    .slides { display: flex; transition: transform 0.5s ease-in-out; }
-    .slide { min-width: 100%;
-     display: flex;
-  justify-content: center; 
-  align-items: center;   }
-    .slide img { 
-        max-width: 90%;    
-  max-height: 400px;  
-        object-fit: contain; display: block; }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .slide.active {
+      display: flex;
+    }
+    .slide img {
+      max-width: 90%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 14px;
+      display: block;
+    }
     .prev, .next {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,.45); color: #fff; border: none;
-      width: 44px; height: 44px; border-radius: 50%;
-      display: grid; place-items:center; cursor: pointer;
+      position: absolute; 
+      top: 50%; 
+      transform: translateY(-50%);
+      background: rgba(0,0,0,.45); 
+      color: #fff; 
+      border: none;
+      width: 44px; 
+      height: 44px; 
+      border-radius: 50%;
+      display: grid; 
+      place-items:center; 
+      cursor: pointer;
     }
     .prev { left: 10px; }
     .next { right: 10px; }
+    .dots {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      background: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .dot.active {
+      background: #333;
+    }
 
     /* Dots indicators */
     .dots {
@@ -193,7 +234,7 @@
     <a href="#budines">Budines</a>
     <a href="#tartas">Tartas</a>
     <a href="#eventos">Eventos</a>
-    <a href="#pascuas">Pascuas</a>
+    <a href="#pascuas">Sección especial pascua</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
@@ -203,10 +244,10 @@
     <p>Pastelería & Repostería Artesanal</p>
   </header>
 
+  <!-- TORTAS -->
   <section id="tortas" class="section">
     <h2>Tortas</h2>
     <div class="grid">
-      <!-- Ejemplo de card -->
       <div class="card"><img src="torta-frutilla-reina.webp" alt="Torta Frutilla Reina"><h3>Torta Frutilla Reina</h3></div>
       <div class="card"><img src="torta-nuez.webp" alt="Torta de Nuez"><h3>Torta de Nuez</h3></div>
       <div class="card"><img src="torta-pantera-rosa.webp" alt="Torta Pantera Rosa"><h3>Torta Pantera Rosa</h3></div>
@@ -224,7 +265,8 @@
     </div>
   </section>
 
-    <section id="budines" class="section">
+  <!-- BUDINES -->
+  <section id="budines" class="section">
     <h2>Budines</h2>
     <div class="grid">
       <div class="card"><img src="Budin.webp" alt="Budin"><h3>Budin</h3></div>
@@ -241,6 +283,7 @@
     </div>
   </section>
 
+  <!-- TARTAS -->
   <section id="tartas" class="section">
     <h2>Tartas</h2>
     <div class="grid">
@@ -255,6 +298,7 @@
     </div>
   </section>
 
+  <!-- EVENTOS -->
   <section id="eventos" class="section">
     <h2>Servicios para Eventos</h2>
     <div class="slider" id="sliderEventos">
@@ -270,110 +314,37 @@
         <div class="slide"><img src="Cookies-new-york.webp" alt="Cookies New York"></div>
         <div class="slide"><img src="Mini-postres.webp" alt="Mini Postres"></div>
         <div class="slide"><img src="Torta-brownie-con-hilo-nutella.webp" alt="Torta Brownie con Hilo Nutella"></div>
-        <div class="slide"><img src="Torta-brownie.webp" alt="Torta Brownie"></div>
+        <div class="slide"><img src="Tort-brownie.webp" alt="Torta Brownie"></div>
       </div>
       <button class="prev" onclick="prevSlide('sliderEventos')" aria-label="Anterior">❮</button>
       <button class="next" onclick="nextSlide('sliderEventos')" aria-label="Siguiente">❯</button>
       <div class="dots" id="dots-sliderEventos"></div>
     </div>
   </section>
-<section id="pascuas" class="section"> 
-  <h2>Sección Especial Pascuas</h2>
-  <div class="slider" id="sliderPascuas">
-    <div class="slides">
-      <div class="slide"><img src="Conejo-de-chocolate.webp" alt="Conejo de Chocolate"></div>
-      <div class="slide"><img src="Huevo-pascua1.webp" alt="Huevo de Pascua 1"></div>
-      <div class="slide"><img src="Huevo-relleno-oreo.webp" alt="Huevo relleno de Oreo"></div>
-      <div class="slide"><img src="Huevo-relleno-de-chocotorta.webp" alt="Huevo relleno de chocotorta"></div>
-      <div class="slide"><img src="Huevo-relleno-de-chocotorta2.webp" alt="Huevo relleno de chocotorta2"></div>
-      <div class="slide"><img src="Huevos-rellenos2.webp" alt="Huevo rellenos2"></div>
-      <div class="slide"><img src="Huevos-rellenos.webp" alt="Huevos rellenos"></div>
+
+  <!-- PASCUAS -->
+  <section id="pascuas" class="section"> 
+    <h2>Sección Especial Pascuas</h2>
+    <div class="slider" id="sliderPascuas">
+      <div class="slides">
+        <div class="slide"><img src="Conejo-de-chocolate.webp" alt="Conejo de Chocolate"></div>
+        <div class="slide"><img src="Huevo-pascua1.webp" alt="Huevo de Pascua 1"></div>
+        <div class="slide"><img src="Huevo-pascua2.webp" alt="Huevo de Pascua 2"></div>
+        <div class="slide"><img src="Huevo-pascua3.webp" alt="Huevo de Pascua 3"></div>
+        <div class="slide"><img src="Huevo-relleno-oreo.webp" alt="Huevo relleno de Oreo"></div>
+        <div class="slide"><img src="Huevo-relleno-de-chocotorta.webp" alt="Huevo relleno de chocotorta"></div>
+        <div class="slide"><img src="Huevo-relleno-de-chocotorta2.webp" alt="Huevo relleno de chocotorta2"></div>
+        <div class="slide"><img src="Huevos-rellenos2.webp" alt="Huevo rellenos2"></div>
+        <div class="slide"><img src="Huevos-rellenos.webp" alt="Huevos rellenos"></div>
+        <div class="slide"><img src="Huevo-relleno.webp" alt="Huevos rellenos"></div>
       </div>  
-    <button class="prev" onclick="prevSlide('sliderPascuas')" aria-label="Anterior">❮</button>
-    <button class="next" onclick="nextSlide('sliderPascuas')" aria-label="Siguiente">❯</button>
-    <div class="dots" id="dots-sliderPascuas"></div>
-  </div>
-</section>
-<style>
-/* 🎨 Estilos del slider */
-#pascuas {
-  text-align: center;
-  padding: 40px 20px;
-  background: #fff8f0;
-}
+      <button class="prev" onclick="prevSlide('sliderPascuas')" aria-label="Anterior">❮</button>
+      <button class="next" onclick="nextSlide('sliderPascuas')" aria-label="Siguiente">❯</button>
+      <div class="dots" id="dots-sliderPascuas"></div>
+    </div>
+  </section>
 
-.slider-container {
-  position: relative;
-  max-width: 900px;
-  margin: 20px auto;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.slider-wrapper {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-
-.slide img {
-  width: 100%;
-  display: block;
-  border-radius: 15px;
-}
-
-/* Botones de control */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 22px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-}
-
-.prev:hover, .next:hover {
-  background: #ffd6a5;
-}
-
-.prev { left: 15px; }
-.next { right: 15px; }
-</style>
-
-<script>
-/* 🔄 Funcionalidad del slider */
-const wrapper = document.querySelector("#pascuas .slider-wrapper");
-const slides = document.querySelectorAll("#pascuas .slide");
-const prevBtn = document.querySelector("#pascuas .prev");
-const nextBtn = document.querySelector("#pascuas .next");
-
-let index = 0;
-
-function showSlide(i) {
-  if (i >= slides.length) index = 0;
-  else if (i < 0) index = slides.length - 1;
-  else index = i;
-  wrapper.style.transform = `translateX(${-index * 100}%)`;
-}
-
-prevBtn.addEventListener("click", () => showSlide(index - 1));
-nextBtn.addEventListener("click", () => showSlide(index + 1));
-
-// 🔄 Reproducción automática
-setInterval(() => {
-  showSlide(index + 1);
-}, 4000);
-</script>
-
+  <!-- CONTACTO -->
   <footer id="contacto">
     <p>📍 Dirección: Las Toninas</p>
     <p>📱 WhatsApp: 1139496500</p>
@@ -381,66 +352,88 @@ setInterval(() => {
     <p>📷 Instagram: @gimar.56</p>
   </footer>
 
+  <!-- BOTONES FLOTANTES -->
   <div class="floating-btns">
     <a href="https://wa.me/541139496500" target="_blank" class="whatsapp" aria-label="WhatsApp">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-        <path d="M16 .4C7.5.4.6 7.3.6 15.8c0 2.8.8 5.6 2.3 8L.6 31.6l8.1-2.1c2.3 1.3 4.9 2 7.6 2 8.5 0 15.4-6.9 15.4-15.4C31.7 7.3 24.8.4 16 .4zm0 28.1c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5c-1.4-2.2-2.2-4.8-2.2-7.5 0-7.6 6.2-13.7 13.8-13.7s13.8 6.2 13.8 13.7c0 7.6-6.2 13.8-13.8 13.8zm7.5-10.4c-.4-.2-2.3-1.1-2.7-1.2-.4-.2-.6-.2-.9.2-.3.4-1 .2-1.2.1-.3-.1-.9-.3-1.7-.9-.6-.5-1-1.1-1.1-1.3-.2-.4 0-.6.2-.7.2-.2.4-.4.5-.6.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.2-1.2-3-.3-.8-.6-.7-.9-.7h-.8c-.2 0-.6.1-1 .4-.3.4-1.3 1.3-1.3 3.2 0 1.9 1.4 3.8 1.6 4.1.2.2 2.7 4.2 6.6 5.8.9.4 1.6.7 2.1.9.9.3 1.7.3 2.3.2.7-.1 2.3-.9 2.6-1.7.3-.8.3-1.5.2-1.7-.2-.2-.4-.3-.8-.5z"/>
+        <path d="M16 0C7.164 0 0 7.163 0 16c0 2.818.734 5.565 2.129 7.975L0 32l8.309-2.126A15.89 15.89 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm0 29.091c-2.5 0-4.936-.654-7.07-1.891l-.507-.292-4.931 1.262 1.314-4.792-.316-.492C3.74 20.322 3.09 18.205 3.09 16 3.09 8.81 8.81 3.09 16 3.09S28.91 8.81 28.91 16 23.19 29.091 16 29.091zm8.128-9.93c-.445-.223-2.633-1.297-3.041-1.445-.408-.149-.706-.223-1.004.223s-1.148 1.445-1.408 1.742c-.26.297-.519.335-.964.112-.445-.223-1.879-.693-3.578-2.211-1.321-1.18-2.211-2.633-2.471-3.078-.26-.446-.028-.686.195-.909.2-.199.445-.519.668-.778.223-.26.297-.445.446-.743.149-.297.075-.557-.037-.78-.111-.223-1.004-2.415-1.376-3.309-.363-.871-.733-.752-1.004-.765-.26-.012-.557-.014-.855-.014s-.78.112-1.189.557c-.408.445-1.56 1.523-1.56 3.715s1.597 4.309 1.819 4.605c.223.297 3.145 4.805 7.627 6.732 1.065.46 1.897.734 2.546.94 1.069.34 2.04.292 2.807.177.857-.128 2.633-1.077 3.006-2.115.372-1.038.372-1.93.26-2.115-.112-.186-.408-.297-.853-.52z"/>
       </svg>
     </a>
-    <a href="https://www.instagram.com/gimar.56/" target="_blank" class="instagram" aria-label="Instagram">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-        <path d="M16 7.3c2.4 0 2.7 0 3.7.1 1 .1 1.6.2 2 .4.5.2.8.4 1.2.8.3.3.6.7.8 1.2.2.4.3 1 .4 2 .1 1 .1 1.3.1 3.7s0 2.7-.1 3.7c-.1 1-.2 1.6-.4 2-.2.5-.4.8-.8 1.2-.3.3-.7.6-1.2.8-.4.2-1 .3-2 .4-1 .1-1.3.1-3.7.1s-2.7 0-3.7-.1c-1-.1-1.6-.2-2-.4-.5-.2-.8-.4-1.2-.8-.3-.3-.6-.7-.8-1.2-.2-.4-.3-1-.4-2-.1-1-.1-1.3-.1-3.7s0-2.7.1-3.7c.1-1 .2-1.6.4-2 .2-.5.4-.8.8-1.2.3-.3.7-.6 1.2-.8.4-.2 1-.3 2-.4 1-.1 1.3-.1 3.7-.1m0-2.3c-2.5 0-2.8 0-3.8.1-1 .1-1.7.2-2.3.5-.6.2-1.2.6-1.7 1.1-.5.5-.8 1.1-1.1 1.7-.2.6-.4 1.3-.5 2.3-.1 1-.1 1.3-.1 3.8s0 2.8.1 3.8c.1 1 .2 1.7.5 2.3.2.6.6 1.2 1.1 1.7.5.5 1.1.8 1.7 1.1.6.2 1.3.4 2.3.5 1 .1 1.3.1 3.8.1s2.8 0 3.8-.1c1-.1 1.7-.2 2.3-.5.6-.2 1.2-.6 1.7-1.1.5-.5.8-1.1 1.1-1.7.2-.6.4-1.3.5-2.3.1-1 .1-1.3.1-3.8s0-2.8-.1-3.8c-.1-1-.2-1.7-.5-2.3-.2-.6-.6-1.2-1.1-1.7-.5-.5-1.1-.8-1.7-1.1-.6-.2-1.3-.4-2.3-.5-1-.1-1.3-.1-3.8-.1z"/>
-        <path d="M16 10.8c-2.9 0-5.2 2.4-5.2 5.2s2.4 5.2 5.2 5.2 5.2-2.4 5.2-5.2-2.3-5.2-5.2-5.2zm0 8.5c-1.8 0-3.3-1.5-3.3-3.3s1.5-3.3 3.3-3.3 3.3 1.5 3.3 3.3-1.5 3.3-3.3 3.3z"/>
-        <circle cx="21.5" cy="10.5" r="1.2"/>
+    <a href="https://instagram.com/gimar.56" target="_blank" class="instagram" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm6.5-.25a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"/>
       </svg>
     </a>
   </div>
 
+    <!-- SCRIPT -->
   <script>
-    const state = {};
-    
-    function showSlide(id, idx) {
-      const slider = document.getElementById(id);
-      if (!slider) return;
+    function initSlider(sliderId) {
+      const slider = document.getElementById(sliderId);
       const slides = slider.querySelectorAll('.slide');
-      if (!slides.length) return;
-      const total = slides.length;
-      const current = (idx + total) % total;
-      state[id] = current;
-      slider.querySelector('.slides').style.transform = `translateX(-${current*100}%)`;
-      const dots = slider.querySelectorAll('.dot');
-      dots.forEach((d,i)=>d.classList.toggle('active', i===current));
-    }
+      const dotsContainer = slider.querySelector('.dots');
+      const prevBtn = slider.querySelector('.prev');
+      const nextBtn = slider.querySelector('.next');
+      let index = 0;
+      let interval;
 
-    function nextSlide(id) { showSlide(id, (state[id]||0) + 1); }
-    function prevSlide(id) { showSlide(id, (state[id]||0) - 1); }
-
-    function createDots(id){
-      const slider = document.getElementById(id);
-      if(!slider) return;
-      const slides = slider.querySelectorAll('.slide');
-      const dotsContainer = slider.querySelector(`#dots-${id}`) || slider.querySelector('.dots');
-      slides.forEach((_,i)=>{
+      // Crear dots
+      slides.forEach((_, i) => {
         const dot = document.createElement('span');
         dot.classList.add('dot');
-        dot.addEventListener('click', ()=>showSlide(id,i));
+        dot.addEventListener('click', () => {
+          index = i;
+          showSlide();
+        });
         dotsContainer.appendChild(dot);
       });
-      showSlide(id,0);
+
+      function updateDots() {
+        dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+
+      function showSlide() {
+        slides.forEach((s, i) => {
+          s.classList.toggle('active', i === index);
+        });
+        updateDots();
+      }
+
+      function nextSlide() {
+        index = (index + 1) % slides.length;
+        showSlide();
+      }
+
+      function prevSlide() {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide();
+      }
+
+      function startAutoPlay() {
+        interval = setInterval(nextSlide, 5000); // cambia cada 5s
+      }
+
+      function stopAutoPlay() {
+        clearInterval(interval);
+      }
+
+      // botones prev/next
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+
+      // autoplay pausa al pasar mouse
+      slider.addEventListener("mouseenter", stopAutoPlay);
+      slider.addEventListener("mouseleave", startAutoPlay);
+
+      showSlide();
+      startAutoPlay();
     }
 
-    function autoPlay(id){
-      nextSlide(id);
-      setTimeout(()=>autoPlay(id),4000);
-    }
-
-    window.onload = ()=>{
-      ['sliderEventos','sliderPascuas'].forEach(s=>{
-        createDots(s);
-        autoPlay(s);
-      });
-    }
-  </script>
-
+    // Inicializar sliders
+    initSlider('sliderEventos');
+    initSlider('sliderPascuas');
+    </script>
 </body>
 </html>
