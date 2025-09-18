@@ -225,7 +225,15 @@
       .slide img { aspect-ratio: 1.7; }
       header { padding-top: 5.5rem; }
     }
-    /* Ajustes para móviles */
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding-top: 80px; /* Agregar un poco de espacio por encima del contenido */
+}
+
+/* Ajustes para móviles */
 @media (max-width: 768px) {
   nav {
     flex-wrap: wrap;
@@ -235,50 +243,12 @@
   }
 
   header {
-    padding: 4.5rem 1rem 1.5rem; /* reduce altura */
+    padding-top: 5.5rem; /* Ajustar la altura para que no tape el logo */
   }
-  header img {
-    width: 120px; /* logo más chico */
-  }
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  .section h2 {
-    font-size: 1.5rem;
-  }
-
-  .section .grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-    padding: 10px;
-  }
-
-  .section .card img {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 1/1; /* cuadradas en móvil */
-  }
-
-  .floating-btns a {
-    width: 48px;
-    height: 48px;
-  }
-  .floating-btns svg {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-/* Ajustes extra para pantallas muy chicas */
-@media (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav a {
-    padding: 0.3rem 0;
-    font-size: 0.85rem;
+  
+  /* Esto asegurará que el contenido no quede cubierto por el menú */
+  body {
+    padding-top: 90px; /* Asegúrate de que haya un margen adecuado */
   }
 }
   </style>
@@ -493,4 +463,5 @@
     </script>
 </body>
 </html>
+
 
