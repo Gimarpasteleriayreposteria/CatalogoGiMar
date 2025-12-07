@@ -12,12 +12,14 @@
 
   <style>
     
-/* Header completo con el degradado */
+/* Fuerza el degradado SOLO en el menú */
+nav {
+  background: linear-gradient(180deg, #e7a0a8, #b62480, #f6bcd7) !important;
+}
+
+/* Asegura que el header NO tenga color sólido */
 header {
-  background: linear-gradient(180deg, #e7a0a8, #b62480, #f6bcd7);
-  padding: 18px;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  background: transparent !important;
 }
    :root {
       --primary: #e39693;
@@ -519,6 +521,7 @@ header {
     </script>
 </body>
 </html>
+
 
 
 
