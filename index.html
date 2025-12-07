@@ -520,6 +520,7 @@ nav {
       }
 
       function showSlide() {
+        function showSlide() { slides.forEach((s, i) => { s.classList.toggle('active', i === index); }); updateDots(); }
         slides.forEach((s, i) => {
     s.classList.toggle('active', i === index);
 
@@ -579,6 +580,7 @@ nav {
 </body>
   
 </html>
+
 
 
 
