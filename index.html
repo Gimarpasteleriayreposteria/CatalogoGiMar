@@ -17,10 +17,6 @@ nav {
   background: linear-gradient(180deg, #e7a0a8, #b62480, #f6bcd7) !important;
 }
 
-/* Asegura que el header NO tenga color sólido */
-header {
-  background: transparent !important;
-}
    :root {
       --primary: #e39693;
       --secondary: #f8d7da;
@@ -280,6 +276,16 @@ header {
   border-radius: 16px;
   object-fit: contain;
 }
+  /* Oculta el menú cuando baja */
+nav.hide {
+  transform: translateY(-100%);
+  transition: transform .35s ease;
+}
+
+/* Asegura animación suave */
+nav {
+  transition: transform .35s ease;
+}
 }
   </style>
 </head>
@@ -521,6 +527,7 @@ header {
     </script>
 </body>
 </html>
+
 
 
 
