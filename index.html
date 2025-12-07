@@ -325,8 +325,10 @@ nav {
       <div class="card"><img src="torta-pedido.webp" alt="Torta-pedido"><h3>Torta por pedido</h3></div>
       <div class="card"><img src="torta-horoscopo.webp" alt="Torta Horoscopo"><h3>Torta Horóscopo</h3></div>
       <div class="card"><img src="torta-blanca.webp" alt="Torta Blanca"><h3>Torta Blanca</h3></div>
-      <div class="card"><img src="guerreras-kpop.webp" alt="Torta Guerreras k-pop"><h3>Torta guerraras k-pop</h3></div>
+      <div class="card"><img src="guerreras-kpop.webp" alt="Torta Guerreras k-pop"><h3>Torta Guerraras k-pop</h3></div>
       <div class="card"><img src="liloystich.webp" alt="Torta Lilo y stich"><h3>Torta Lilo y stich</h3></div>
+      <div class="card"><img src="Torta-matilda.webp" alt="Torta Matilda"><h3>Torta Matilda</h3></div>
+      <div class="card"><img src="Torta-casamiento.webp" alt="Torta Casamiento"><h3>Torta Casamiento</h3></div>
     </div>
   </section>
 
@@ -365,6 +367,7 @@ nav {
       <div class="card"><img src="Tarta-tofee.webp" alt="Tarta Tofee"><h3>Tarta Tofee</h3></div>
        <div class="card"><img src="tarta-de-frutillas.webp" alt="Tarta de frutillas"><h3>Tarta de frutillas</h3></div>
        <div class="card"><img src="tarta-brownie.webp" alt="Tarta brownie"><h3>Tarta brownie</h3></div>
+      <div class="card"><img src="tarta-franuit.webp" alt="Tarta franuit"><h3>Tarta franuit</h3></div>
     </div>
   </section>
 
@@ -525,8 +528,30 @@ nav {
     initSlider('sliderPascuas');
     initSlider('sliderBoxRegalo');
     </script>
+  
+  <script>
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 80) {
+    // Bajando → ocultar
+    nav.classList.add("hide");
+  } else {
+    // Subiendo → mostrar
+    nav.classList.remove("hide");
+  }
+
+  lastScroll = currentScroll;
+});
+</script>
 </body>
+  
+  
 </html>
+
 
 
 
