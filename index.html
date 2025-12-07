@@ -50,6 +50,11 @@ nav {
     }
     nav a:hover { color: var(--secondary); }
 
+    header .prev,
+header .next {
+  display: none !important;
+}
+
     header {
       background-image: url("Diseñopasteleria1.png");
   background-size: cover;
@@ -134,6 +139,14 @@ nav {
     }
 
      /* Slider */
+    .video-slide {
+  max-width: 90%;
+  max-height: 400px;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
     .slider {
       position: relative;
       max-width: 100%;
@@ -444,14 +457,11 @@ nav {
       <div class="slide"><img src="Boxdiadelamadre.webp" alt="Box Día de la Madre"></div>
       <div class="slide"><img src="Boxdiadelamadre1.webp" alt="Box Día de la Madre 1"></div>
       <div class="slide"><img src="Boxdiadelamadre2.webp" alt="Box Día de la Madre 2"></div>
-    </div>
-     <!-- VIDEO -->
-  <div class="slide">
     <video class="video-slide" muted playsinline>
       <source src="Dia-de-la-madre.mp4" type="video/mp4">
     </video>
-  </div>
-</div>
+    </div>
+    
     <button class="prev" onclick="prevSlide('sliderBoxRegalo')">❮</button>
     <button class="next" onclick="nextSlide('sliderBoxRegalo')">❯</button>
     <div class="dots" id="dots-sliderBoxRegalo"></div>
@@ -508,14 +518,12 @@ nav {
         });
       }
 
-      function showSlide() {
-        function showSlide() { slides.forEach((s, i) => { s.classList.toggle('active', i === index); }); updateDots(); }
-        slides.forEach((s, i) => {
+      function showSlide()  {
+  slides.forEach((s, i) => {
     s.classList.toggle('active', i === index);
 
-    // Buscar video dentro de cada slide
+    // Si hay video, lo controla
     const video = s.querySelector('video');
-
     if (video) {
       if (i === index) {
         video.currentTime = 0;
@@ -527,8 +535,7 @@ nav {
   });
 
   updateDots();
-      }
-
+}
       function nextSlide() {
         index = (index + 1) % slides.length;
         showSlide();
@@ -569,6 +576,7 @@ nav {
 </body>
   
 </html>
+
 
 
 
