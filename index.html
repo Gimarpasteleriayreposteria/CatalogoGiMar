@@ -261,6 +261,15 @@ nav {
     font-size: 0.9rem;
     padding: 0.6rem;
   }
+  /* ==== CONTROL DE MENÚ SCROLL (TODOS LOS DISPOSITIVOS) ==== */
+nav {
+  transition: transform .35s ease;
+}
+
+nav.hide {
+  transform: translateY(-100%);
+}
+
 
   header {
     padding-top: 5.5rem; /* Ajustar la altura para que no tape el logo */
@@ -549,26 +558,9 @@ nav {
   
  
 </body>
-   <script>
-let lastScroll = 0;
-
-window.addEventListener("scroll", () => {
-  const nav = document.querySelector("nav");
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll > lastScroll && currentScroll > 80) {
-    // Bajando → ocultar
-    nav.classList.add("hide");
-  } else {
-    // Subiendo → mostrar
-    nav.classList.remove("hide");
-  }
-
-  lastScroll = currentScroll;
-});
-</script>
   
 </html>
+
 
 
 
